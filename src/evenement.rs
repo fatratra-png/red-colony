@@ -1,5 +1,3 @@
-use rand::Rng;
-
 #[derive(Debug)]
 pub enum Evenement {
     TempeteDeSable,
@@ -9,8 +7,7 @@ pub enum Evenement {
 }
 
 pub fn tirer_evenement() -> Evenement {
-    let mut rng = rand::thread_rng();
-    let tirage = rng.gen_range(0..10);
+    let tirage: u32 = rand::random_range(0..10);
     match tirage {
         0 => Evenement::TempeteDeSable,
         1 => Evenement::DecouverteDeGlace,
